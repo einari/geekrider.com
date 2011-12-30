@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geekrider.Web", "..\Geekrider.Web\Geekrider.Web.csproj", "{BAF2FDB0-ACD3-45B0-BB58-EC8DD38CD446}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAF2FDB0-ACD3-45B0-BB58-EC8DD38CD446}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAF2FDB0-ACD3-45B0-BB58-EC8DD38CD446}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAF2FDB0-ACD3-45B0-BB58-EC8DD38CD446}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAF2FDB0-ACD3-45B0-BB58-EC8DD38CD446}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = ..\Geekrider.Web\Geekrider.Web.csproj
+	EndGlobalSection
+EndGlobal
