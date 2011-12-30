@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+
+ul.menusm { font-size:14px; line-height:17px;}
+
+/* DESIGN NAV1 (categories) */
+/* level 0 */
+#nav1 ul { margin:0 auto; width:970px; height:41px;}
+#nav1 ul li { float:left; padding:0; margin:0; }
+#nav1 ul li a { border-right:1px dashed #49b5e2; border-left:1px dashed #1986cf; display:block; margin:0; padding:12px 30px; color:#b8e8fe; text-decoration:none;}
+#nav1 ul li.current-cat { text-decoration:none; }							/* active item first level */
+#nav1 ul li.current-cat a,
+#nav1 ul li ul li a.a_hover_main { text-decoration:none;  } /* on hover */
+
+/* level 1 */
+#nav1 ul li ul { top:41px; left:0; width:140px;}				/* position of submenu */
+#nav1 ul li ul li { float:none; background:#299dd4;}
+#nav1 ul li ul li a { width:auto; padding:12px 10px; border-left:0; border-right:0;}
+#nav1 ul li ul li a.have_submenu { }																/* if item have submenu */
+#nav1 ul li ul li a:hover,
+#nav1 ul li ul li a.have_submenu_hover { background:#2ca9e4; border-top:1px dashed #5fb6df; border-bottom:1px dashed #5fb6df; padding:11px 10px; border-left:0; border-right:0;}
+/* level 2 */
+#nav1 ul li ul li ul { top:0px; left:140px;}									/* position of sub-submenu */
+
+/* DO NOT EDIT!!! */
+ul.menusm { list-style:none;}
+ul.menusm li { cursor:pointer; position:relative; z-index:/*IE7*/999;}
+ul.menusm li a { position:relative; z-index:1000;}
+ul.menusm li ul { display:none; position:absolute; list-style:none; z-index:999;}
+ul.menusm li ul li ul { position:absolute; list-style:none;}
