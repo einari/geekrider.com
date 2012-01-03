@@ -9,10 +9,24 @@ require.config({
 	}
 });
 
-define("Home", ["text!../Features/Home/view.html!strip", "text!../Features/Home/view.css", "../Features/Home/viewModel"], function(v,s){
+define("$",["jquery"],function($) {
+	console.log("jQuery");
+	return $;
+});
+
+
+define("Home", ["jquery", "text!../Features/Home/view.html!strip", "text!../Features/Home/view.css", "../Features/Home/viewModel"], function(v,s){
+	console.log("Home factory");
 	return {
 		view: v,
 		styles: s
+	}
+});
+
+define("Navigation", ["jquery", "knockout", "text!../Features/Navigation/view.html!strip", "../Features/Navigation/viewModel"], function(v,s) {
+	
+	return {
+		view: v,
 	}
 });
 
@@ -30,6 +44,10 @@ require(["jquery"], function($) {
 
 require(["Home"], function(h) {
 	console.log("Home");
+});
+
+require(["Navigation"], function(h) {
+	console.log("Navigation");
 });
 
 /*
