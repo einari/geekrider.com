@@ -46,10 +46,82 @@
   </ProjectExtensions>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="images\4366690481_4b347cb544_s.jpg" />
+    <Content Include="images\4368505664_fa4dd3b2c5_s.jpg" />
+    <Content Include="images\4369402703_52193a772c_s.jpg" />
+    <Content Include="images\4369402731_1f289e75c2_s.jpg" />
+    <Content Include="images\4370132042_08dace4d88_s.jpg" />
+    <Content Include="images\4370151016_67c51ffb6a_s.jpg" />
+    <Content Include="images\a_link.gif" />
+    <Content Include="images\avatar.gif" />
+    <Content Include="images\banner_1.gif" />
+    <Content Include="images\banner_2.gif" />
+    <Content Include="images\banner_3.gif" />
+    <Content Include="images\banner_4.gif" />
+    <Content Include="images\banner_img_1.gif" />
+    <Content Include="images\banner_img_2.gif" />
+    <Content Include="images\body_img_1.jpg" />
+    <Content Include="images\body_img_2.jpg" />
+    <Content Include="images\body_img_3.jpg" />
+    <Content Include="images\button.gif" />
+    <Content Include="images\default_avatar_author.gif" />
+    <Content Include="images\default_avatar_visitor.gif" />
+    <Content Include="images\flickr_img.gif" />
+    <Content Include="images\hl-dot.gif" />
+    <Content Include="images\hover.gif" />
+    <Content Include="images\ico-soc1.gif" />
+    <Content Include="images\ico-soc2.gif" />
+    <Content Include="images\ico-soc3.gif" />
+    <Content Include="images\ico-soc4.gif" />
+    <Content Include="images\ico-soc5.gif" />
+    <Content Include="images\ico-soc6.gif" />
+    <Content Include="images\img_1.jpg" />
+    <Content Include="images\img_2.jpg" />
+    <Content Include="images\main.gif" />
+    <Content Include="images\menu_bg.gif" />
+    <Content Include="images\overlay.png" />
+    <Content Include="images\post_com_bg.gif" />
+    <Content Include="images\rss.gif" />
+    <Content Include="images\search.gif" />
+    <Content Include="images\simple_bg.gif" />
+    <Content Include="images\simple_img_1.jpg" />
+    <Content Include="images\simple_img_2.jpg" />
+    <Content Include="images\simple_img_3.jpg" />
+    <Content Include="images\spacer.gif" />
+    <Content Include="images\ta-mark.png" />
+    <Content Include="images\tabs_1.png" />
+    <Content Include="images\tabs_2.png" />
+    <Content Include="scripts\PT_Sans.js" />
+    <Content Include="scripts\coin-slider.min.js" />
+    <Content Include="scripts\cufon-yui.js" />
+    <Content Include="scripts\custom.js" />
+    <Content Include="scripts\hoverintent.js" />
+    <Content Include="scripts\jquery-1.7.1.min.js" />
+    <Content Include="scripts\knockout-2.0.0.js" />
+    <Content Include="scripts\main.js" />
+    <Content Include="scripts\menusm.js" />
+    <Content Include="scripts\require.js" />
+    <Content Include="scripts\script.js" />
+    <Content Include="scripts\superfish.js" />
+    <Content Include="scripts\text.js" />
+    <Content Include="features\Home\view.css" />
+    <Content Include="features\Home\view.html" />
+    <Content Include="features\Home\viewModel.js" />
+    <Content Include="features\Navigation\view.html" />
+    <Content Include="features\Navigation\viewModel.js" />
+    <Content Include="styles\coin-slider-styles.css" />
+    <Content Include="styles\menusm.css" />
+    <Content Include="styles\pagenavi-css.css" />
+    <Content Include="styles\style.css" />
+    <Content Include="html.html" />
+    <Content Include="index.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="features\.DS_Store" />
   </ItemGroup>
 </Project>
