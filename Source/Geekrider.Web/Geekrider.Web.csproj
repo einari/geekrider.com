@@ -115,6 +115,14 @@
     <Content Include="styles\style.css" />
     <Content Include="html.html" />
     <Content Include="index.html" />
+    <Content Include="features\Footer\view.html" />
+    <Content Include="features\Footer\viewModel.js" />
+    <Content Include="features\Header\view.html" />
+    <Content Include="features\Header\viewModel.js" />
+    <Content Include="features\Posts\view.html" />
+    <Content Include="features\Posts\viewModel.js" />
+    <Content Include="scripts\Bifrost\Bifrost.Features.js" />
+    <Content Include="scripts\order.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
