@@ -26,12 +26,13 @@ var Bifrost = Bifrost || {};
 		self.load = function(loaded) {
 			var path = "../Features/"+self.name;
 			var view = "text!"+path+"/view.html!strip";
-			var styles = "text!"+path+"/views.css";
+			//var styles = "text!"+path+"/views.css";
 			var viewModelPath = path+"/viewModel";
 
-			require([view, styles, viewModelPath], function(v,s) {
+//			require([view, styles, viewModelPath], function(v,s) {
+			require([view, viewModelPath], function(v) {
 				self.view = v;
-				self.stylesheet = s;
+				//self.stylesheet = s;
 			
 				if( loaded ) {
 					loaded(self);
