@@ -4,12 +4,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
 	<title>view</title>
-	
 </head>
 
 <body>
+	<!--
     <div class="topnav">
       <ul>
         <li class="current_page_item"><a href="#" title="Demo 2 Blog">Home</a></li>
@@ -17,6 +16,14 @@
         <li class="page_item page-item-3"><a href="#" title="Arhives">Arhives </a></li>
         <li class="page_item page-item-4"><a href="#" title="Contact us">Contact us</a></li>
       </ul>
-    </div>
+    </div>-->
+
+	<div class="topnav">
+		<ul data-bind="foreach: navigationItems">
+			<li class="page_item"><a href="#" data-bind="title: title, text: title"></a></li>
+		</ul>
+	</div>
+
+
 </body>
 </html>

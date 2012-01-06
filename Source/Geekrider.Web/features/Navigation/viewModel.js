@@ -1,9 +1,12 @@
 (function() {
-	viewModel = function() {
+	Bifrost.Features.Navigation.defineViewModel(function() {
+		var self = this;
 		
-	};
-	
-	$(function() {
-		ko.applyBindings(new viewModel());
+		self.navigationItems = [
+			{ title: "Home" },
+			{ title: "About" },
+			{ title: "Contact" }
+		];
+		
 	});
 })();
