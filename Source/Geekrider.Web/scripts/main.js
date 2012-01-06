@@ -4,7 +4,8 @@ require.config({
 	optimize: "none",
 
 	paths: {
-		"jquery" : "jquery-1.7.1.min",
+		"jquery" : "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min",
+			//"jquery-1.7.1.min",
 		"knockout" : "knockout-2.0.0"
 	}
 });
