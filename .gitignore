@@ -2,3 +2,5 @@
 .DS_Store
 bin
 obj
+*.suo
+*.user
