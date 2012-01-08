@@ -21,14 +21,28 @@
 	<integer>200</integer>
 	<key>metaData</key>
 	<dict>
-		<key>features/Navigation/viewModel.js</key>
+		<key>features/Header/view.html</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>37</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>1</integer>
+				<integer>19</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>index.html</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>7</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -40,23 +54,37 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>10</integer>
+				<integer>44</integer>
 				<key>line</key>
-				<integer>16</integer>
+				<integer>32</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>13</integer>
 		</dict>
 		<key>scripts/main.js</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>31</integer>
+				<integer>17</integer>
 				<key>line</key>
-				<integer>7</integer>
+				<integer>17</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>styles/style.css</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>17</integer>
+				<key>line</key>
+				<integer>9</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -66,9 +94,11 @@
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>scripts/Bifrost/Bifrost.Features.js</string>
+		<string>index.html</string>
+		<string>styles/style.css</string>
 		<string>scripts/main.js</string>
-		<string>features/Navigation/viewModel.js</string>
+		<string>scripts/Bifrost/Bifrost.Features.js</string>
+		<string>features/Header/view.html</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
