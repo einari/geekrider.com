@@ -3,6 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geekrider.Web", "..\Geekrider.Web\Geekrider.Web.csproj", "{BAF2FDB0-ACD3-45B0-BB58-EC8DD38CD446}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geekrider.Domain", "..\Geekrider.Domain\Geekrider.Domain.csproj", "{798E1DB4-AC7A-4877-9365-DF7559BACF34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geekrider.Events", "..\Geekrider.Events\Geekrider.Events.csproj", "{5AFAFE89-7FEF-4257-9E3A-C4D04B726F3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geekrider.Views", "..\Geekrider.Views\Geekrider.Views.csproj", "{61211F42-A7A3-4F45-A159-BA662D171208}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +19,21 @@ Global
 		{BAF2FDB0-ACD3-45B0-BB58-EC8DD38CD446}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAF2FDB0-ACD3-45B0-BB58-EC8DD38CD446}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAF2FDB0-ACD3-45B0-BB58-EC8DD38CD446}.Release|Any CPU.Build.0 = Release|Any CPU
+		{798E1DB4-AC7A-4877-9365-DF7559BACF34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{798E1DB4-AC7A-4877-9365-DF7559BACF34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{798E1DB4-AC7A-4877-9365-DF7559BACF34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{798E1DB4-AC7A-4877-9365-DF7559BACF34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AFAFE89-7FEF-4257-9E3A-C4D04B726F3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AFAFE89-7FEF-4257-9E3A-C4D04B726F3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AFAFE89-7FEF-4257-9E3A-C4D04B726F3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AFAFE89-7FEF-4257-9E3A-C4D04B726F3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61211F42-A7A3-4F45-A159-BA662D171208}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61211F42-A7A3-4F45-A159-BA662D171208}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61211F42-A7A3-4F45-A159-BA662D171208}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61211F42-A7A3-4F45-A159-BA662D171208}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = ..\Geekrider.Web\Geekrider.Web.csproj
