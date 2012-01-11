@@ -2451,6 +2451,27 @@
             Gets or sets the <see cref="T:Bifrost.Sagas.IChapter"/> that was transitioned to, if succeeded
             </summary>
         </member>
+        <member name="T:Bifrost.Extensions.TypeInfo`1">
+            <summary>
+            Represents an implementation of <see cref="T:Bifrost.Extensions.ITypeInfo"/>
+            </summary>
+            <typeparam name="T">Type it holds info for</typeparam>
+        </member>
+        <member name="T:Bifrost.Extensions.ITypeInfo">
+            <summary>
+            Defines information for types
+            </summary>
+        </member>
+        <member name="P:Bifrost.Extensions.ITypeInfo.HasDefaultConstructor">
+            <summary>
+            Gets a boolean indicating wether or not the type has a default constructor that takes no arguments
+            </summary>
+        </member>
+        <member name="F:Bifrost.Extensions.TypeInfo`1.Instance">
+            <summary>
+            Gets a singleton instance of the TypeInfo
+            </summary>
+        </member>
         <member name="T:Bifrost.Events.EventSubscriptionManager">
             <summary>
             Represents an implementation of <see cref="T:Bifrost.Events.IEventSubscriptionManager"/>
@@ -3789,6 +3810,13 @@
             Provides a set of methods for working with <see cref="T:System.Type">types</see>
             </summary>
         </member>
+        <member name="M:Bifrost.Extensions.TypeExtensions.HasDefaultConstructor(System.Type)">
+            <summary>
+            Check if a type has a default constructor that does not take any arguments
+            </summary>
+            <param name="type">Type to check</param>
+            <returns>true if it has a default constructor, false if not</returns>
+        </member>
         <member name="M:Bifrost.Extensions.TypeExtensions.HasInterface``1(System.Type)">
             <summary>
             Check if a type implements a specific interface
@@ -4013,11 +4041,10 @@
             Typically all repository behavior and factory behavior
             </remarks>
         </member>
-        <member name="M:Bifrost.Domain.AggregatedRootCommandHandler`1.#ctor(Bifrost.Domain.IAggregatedRootRepository{`0})">
+        <member name="M:Bifrost.Domain.AggregatedRootCommandHandler`1.#ctor">
             <summary>
             Constructs a <see cref="T:Bifrost.Domain.AggregatedRootCommandHandler`1">AggregatedRootCommandHandler</see>
             </summary>
-            <param name="repository">Repository for the aggregated root</param>
         </member>
         <member name="M:Bifrost.Domain.AggregatedRootCommandHandler`1.Handle(Bifrost.Commands.ICommandForType{`0})">
             <summary>
