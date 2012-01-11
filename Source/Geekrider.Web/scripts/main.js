@@ -1,6 +1,6 @@
 require.config({
 	appDir: "../",
-	baseUrl: "./scripts",
+	baseUrl: "/scripts",
 	optimize: "none",
 
 	paths: {

@@ -123,6 +123,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" />
   <ProjectExtensions>
     <MonoDevelop>
       <Properties VerifyCodeBehindFields="true" VerifyCodeBehindEvents="true">
@@ -148,6 +149,8 @@
     </VisualStudio>
   </ProjectExtensions>
   <ItemGroup>
+    <Content Include="administration\posts\create\view.html" />
+    <Content Include="administration\posts\create\viewModel.js" />
     <Content Include="Global.asax" />
     <Content Include="images\4366690481_4b347cb544_s.jpg" />
     <Content Include="images\4368505664_fa4dd3b2c5_s.jpg" />
@@ -167,6 +170,11 @@
     <Content Include="images\body_img_2.jpg" />
     <Content Include="images\body_img_3.jpg" />
     <Content Include="images\button.gif" />
+    <Content Include="images\commands\document_edit.png" />
+    <Content Include="images\commands\document_ok.png" />
+    <Content Include="images\commands\edit.png" />
+    <Content Include="images\commands\ok.png" />
+    <Content Include="images\commands\pencil.png" />
     <Content Include="images\default_avatar_author.gif" />
     <Content Include="images\default_avatar_visitor.gif" />
     <Content Include="images\flickr_img.gif" />
@@ -244,5 +252,18 @@
     </Content>
     <Content Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Geekrider.Domain\Geekrider.Domain.csproj">
+      <Project>{798E1DB4-AC7A-4877-9365-DF7559BACF34}</Project>
+      <Name>Geekrider.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geekrider.Events\Geekrider.Events.csproj">
+      <Project>{5AFAFE89-7FEF-4257-9E3A-C4D04B726F3A}</Project>
+      <Name>Geekrider.Events</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geekrider.Views\Geekrider.Views.csproj">
+      <Project>{61211F42-A7A3-4F45-A159-BA662D171208}</Project>
+      <Name>Geekrider.Views</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

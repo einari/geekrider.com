@@ -5,8 +5,8 @@ using Bifrost.Ninject;
 using Bifrost.WCF.Commands;
 using Bifrost.WCF.Execution;
 using Bifrost.Web.Mvc;
-using Ninject;
 using Geekrider.Services;
+using Ninject;
 
 namespace Geekrider
 {
