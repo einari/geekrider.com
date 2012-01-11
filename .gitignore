@@ -4,4 +4,4 @@ obj
 *.suo
 *.user
 *.userprefs
-Sources/Solutions/packages
+Source/Solutions/packages/**/*
