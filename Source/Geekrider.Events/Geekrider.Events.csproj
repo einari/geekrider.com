@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExcerciseTypes\DetailsSet.cs" />
     <Compile Include="Posts\PostCreated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Excercises\Excercise.cs" />
+    <Compile Include="Excercises\Commands\CreateExcerciseType.cs" />
+    <Compile Include="Excercises\ExcerciseMetaData.cs" />
+    <Compile Include="Excercises\ExcerciseType.cs" />
     <Compile Include="Posts\Commands\CreatePost.cs" />
     <Compile Include="Posts\Commands\PostCommandHandlers.cs" />
     <Compile Include="Posts\Post.cs" />
@@ -54,6 +58,7 @@
       <Name>Geekrider.Events</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
