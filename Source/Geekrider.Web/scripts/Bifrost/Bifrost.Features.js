@@ -66,19 +66,19 @@ var Bifrost = Bifrost || {};
 			return self.name === "root";
 		}
 		
-		this.getBasePath = function() {
-			var path = "/Features"
+		this.getBasePath = function(isAdministration) {
+			var path = isAdministration ? "/administration" : "/features";
 			if( self.isRoot() ) {
 				return path;
 			}
 			return path+"/"+self.name;
 		}
 		
-		this.addFeature = function(name, loaded) {
+		this.addFeature = function(isAdministration, name, loaded) {
 			var view = "view"
 			var viewModel = "viewModel";
 			
-			var path = self.getBasePath();
+			var path = self.getBasePath(isAdministration);
 			
 			if( !self.isRoot() ) {
 				view = name;
@@ -94,11 +94,11 @@ var Bifrost = Bifrost || {};
 	}
 
 	Bifrost.features = $.extend(new Container("root"), {
-		addOrGetContainer: function(name) {
+		addOrGetContainer: function(name, isAdministration) {
 			if( Bifrost.features[name] != undefined ) {
 				return Bifrost.features[name];
 			}
-			var container = new Container(name);
+			var container = new Container(name, isAdministration);
 			Bifrost.features[name] = container;
 			return container;
 		}
@@ -109,6 +109,7 @@ var Bifrost = Bifrost || {};
 		$("*[data-feature]").each(function() {
 			var target = $(this);
 			var feature = $(this).attr("data-feature");
+			var isAdministration = $(this).attr("data-admin") != undefined ? true : false;
 
 			var container = feature;
 			var name = feature;
@@ -121,7 +122,7 @@ var Bifrost = Bifrost || {};
 				root = Bifrost.features.addOrGetContainer(container);
 			}
 			
-			root.addFeature(name, function(f) {
+			root.addFeature(isAdministration, name, function(f) {
 				f.renderTo(target[0]);
 			});
 		});

@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>view</title>
+	
+</head>
+
+<body>
+    <div id="nav1">
+      <ul class="menusm" data-bind="foreach: items">
+		<li class="cat-item" data-bind="menu: title">
+			<a href="#" data-bind="title: title, text:title"></a>
+			
+			<ul class="children" data-bind="visible: items().length > 0, foreach: items">
+				<li class="cat-item"><a href="#" data-bind="text: title"></a></li>
+			</ul>
+		</li>
+		
+	
+	<!--
+        <li class="cat-item cat-item-9"><a href="#" class="active" title="View all posts filed under Freebies">Freebies</a> </li>
+        <li class="cat-item cat-item-3"><a href="#" title="View all posts filed under Graphics">Graphics</a> </li>
+        <li class="cat-item cat-item-6"><a href="#" title="View all posts filed under Fonts">Fonts</a>
+          <ul class='children'>
+            <li class="cat-item cat-item-12">
+				<a href="#" title="View all posts filed under Open Type">Open Type</a> 
+			</li>
+            <li class="cat-item cat-item-13">
+				<a href="#" title="View all posts filed under Post Script">Post Script</a> 
+			</li>
+            <li class="cat-item cat-item-11">
+				<a href="#" title="View all posts filed under True Type">True Type</a>
+				<ul class='children'>
+                	<li class="cat-item cat-item-14">
+						<a href="#" title="View all posts filed under Serif Fonts">Serif Fonts</a> 
+					</li>
+              	</ul>
+            </li>
+          </ul>
+        </li>
+        <li class="cat-item cat-item-7">
+			<a href="#" title="View all posts filed under How-To">How-To</a> 
+		</li>
+        <li class="cat-item cat-item-1">
+			<a href="#" title="View all posts filed under Reviews">Reviews</a> 
+		</li>
+        <li class="cat-item cat-item-4">
+			<a href="#" title="View all posts filed under Showcases">Showcases</a> 
+		</li>
+        <li class="cat-item cat-item-8">
+			<a href="#" title="View all posts filed under Tools">Tools</a> 
+		</li>
+        <li class="cat-item cat-item-10">
+			<a href="#" title="View all posts filed under Tutorials">Tutorials</a> 
+		</li>
+		-->
+      </ul>
+      <div class="clr"></div>
+    </div>
+    <!--nav1-->
+  </div>
+
+
+</body>
+</html>

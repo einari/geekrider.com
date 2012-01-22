@@ -1,5 +1,5 @@
 (function() {
-	Bifrost.features.header.defineViewModel(function() {
+	Bifrost.features.layout.header.defineViewModel(function() {
 		
 	});
 })();
