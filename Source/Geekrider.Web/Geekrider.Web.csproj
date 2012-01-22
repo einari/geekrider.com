@@ -149,8 +149,14 @@
     </VisualStudio>
   </ProjectExtensions>
   <ItemGroup>
+    <Content Include="administration\posts\create.html" />
+    <Content Include="administration\posts\create.js" />
     <Content Include="administration\posts\create\view.html" />
     <Content Include="administration\posts\create\viewModel.js" />
+    <Content Include="features\Layout\footer.html" />
+    <Content Include="features\Layout\footer.js" />
+    <Content Include="features\Layout\header.html" />
+    <Content Include="features\Layout\header.js" />
     <Content Include="Global.asax" />
     <Content Include="images\4366690481_4b347cb544_s.jpg" />
     <Content Include="images\4368505664_fa4dd3b2c5_s.jpg" />
@@ -160,6 +166,7 @@
     <Content Include="images\4370151016_67c51ffb6a_s.jpg" />
     <Content Include="images\a_link.gif" />
     <Content Include="images\avatar.gif" />
+    <Content Include="images\background.gif" />
     <Content Include="images\banner_1.gif" />
     <Content Include="images\banner_2.gif" />
     <Content Include="images\banner_3.gif" />
@@ -226,10 +233,6 @@
     <Content Include="styles\style.css" />
     <Content Include="html.html" />
     <Content Include="index.html" />
-    <Content Include="features\Footer\view.html" />
-    <Content Include="features\Footer\viewModel.js" />
-    <Content Include="features\Header\view.html" />
-    <Content Include="features\Header\viewModel.js" />
     <Content Include="features\Posts\view.html" />
     <Content Include="features\Posts\viewModel.js" />
     <Content Include="scripts\Bifrost\Bifrost.Features.js" />
@@ -242,7 +245,7 @@
     <Compile Include="Services\ViewService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="features\.DS_Store" />
+    <Content Include="viewModel.js" />
     <Content Include="web.config" />
     <Content Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
