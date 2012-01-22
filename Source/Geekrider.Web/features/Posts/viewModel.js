@@ -1,5 +1,5 @@
 (function() {
-	Bifrost.Features.Posts.defineViewModel(function() {
+	Bifrost.features.posts.defineViewModel(function() {
 		
 	});
 })();

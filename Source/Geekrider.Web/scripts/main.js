@@ -1,11 +1,11 @@
 require.config({
-	appDir: "../",
+	appDir: "/",
 	baseUrl: "/scripts",
 	optimize: "none",
 
 	paths: {
 		"jquery" : "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min",
-			//"jquery-1.7.1.min",
+			//"jquery-1.7.1.min",'
 		"knockout" : "knockout-2.0.0"
 	}
 });
@@ -16,5 +16,7 @@ require(
 		"order!knockout", 
 		"order!Bifrost/Bifrost.Features",
 	], function($) {
-	console.log("Application loaded");
+		require(["viewModel.js"], function() {
+			console.log("Application loaded");
+		});
 });
