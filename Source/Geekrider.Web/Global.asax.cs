@@ -1,45 +1,36 @@
-using System;
-using System.Collections;
-using System.ComponentModel;
-using System.Web;
-using System.Web.SessionState;
+using System.Web.Routing;
+using Bifrost.Configuration;
+using Bifrost.Execution;
+using Bifrost.Ninject;
+using Bifrost.WCF.Commands;
+using Bifrost.WCF.Execution;
+using Bifrost.Web.Mvc;
+using Geekrider.Services;
+using Ninject;
 
 namespace Geekrider
 {
-	public class Global : System.Web.HttpApplication
-	{
-		
-		protected virtual void Application_Start (Object sender, EventArgs e)
-		{
-		}
-		
-		protected virtual void Session_Start (Object sender, EventArgs e)
-		{
-		}
-		
-		protected virtual void Application_BeginRequest (Object sender, EventArgs e)
-		{
-		}
-		
-		protected virtual void Application_EndRequest (Object sender, EventArgs e)
-		{
-		}
-		
-		protected virtual void Application_AuthenticateRequest (Object sender, EventArgs e)
-		{
-		}
-		
-		protected virtual void Application_Error (Object sender, EventArgs e)
-		{
-		}
-		
-		protected virtual void Session_End (Object sender, EventArgs e)
-		{
-		}
-		
-		protected virtual void Application_End (Object sender, EventArgs e)
-		{
-		}
-	}
+    public class Global : BifrostHttpApplication
+    {
+        public override void OnConfigure(Configure configure)
+        {
+            configure.UsingConfigConfigurationSource();
+
+            base.OnConfigure(configure);
+        }
+
+        public override void OnStarted()
+        {
+            RouteTable.Routes.AddService<CommandCoordinatorService>();
+            RouteTable.Routes.AddService<ViewService>();
+        }
+
+        protected override IContainer CreateContainer()
+        {
+            var kernel = new StandardKernel();
+            var container = new Container(kernel);
+            return container;
+        }
+    }
 }
 

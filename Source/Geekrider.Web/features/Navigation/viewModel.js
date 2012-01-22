@@ -1,5 +1,5 @@
 (function() {
-	Bifrost.Features.Navigation.defineViewModel(function() {
+	Bifrost.features.navigation.defineViewModel(function() {
 		var self = this;
 		
 		self.navigationItems = [
@@ -7,6 +7,5 @@
 			{ title: "About" },
 			{ title: "Contact" }
 		];
-		
 	});
-})();
+})();	

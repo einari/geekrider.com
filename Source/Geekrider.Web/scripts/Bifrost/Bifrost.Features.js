@@ -19,15 +19,22 @@ var Bifrost = Bifrost || {};
 		}
 	}
 	
-	function Feature(name) {
+		
+	function Feature(name, view, viewModel, path) {
+		
+		this.name = name;
+		this.view = view;
+		this.viewModel = viewModel;
+		this.path = path;
+		
 		var self = this;
-		self.name = name;
 
-		self.load = function(loaded) {
-			var path = "../Features/"+self.name;
-			var view = "text!"+path+"/view.html!strip";
+		this.load = function(loaded) {
+		
+			//var path = "/Features/"+self.name;
+			var view = "text!"+self.path+"/"+self.view+".html!strip";
 			//var styles = "text!"+path+"/views.css";
-			var viewModelPath = path+"/viewModel";
+			var viewModelPath = self.path+"/"+self.viewModel+".js";
 
 //			require([view, styles, viewModelPath], function(v,s) {
 			require([view, viewModelPath], function(v) {
@@ -40,33 +47,82 @@ var Bifrost = Bifrost || {};
 			});
 		}
 		
-		self.defineViewModel = function(viewModel, isSingleton) {
+		this.defineViewModel = function(viewModel, isSingleton) {
 			self.viewModel = new ViewModel(viewModel, isSingleton);
 		}
 		
-		self.renderTo = function(target) {
+		this.renderTo = function(target) {
 			$(target).append(self.view);
 			var viewModel = self.viewModel.getInstance();
 			ko.applyBindings(viewModel, target);
 		}
 	}
-
-	Bifrost.Features = {
-		add: function(name, loaded) {
-			var feature = new Feature(name, loaded);
-			Bifrost.Features[name] = feature;
+	
+	function Container(name) {
+		this.name = name;
+		var self = this;
+		
+		this.isRoot = function() {
+			return self.name === "root";
+		}
+		
+		this.getBasePath = function() {
+			var path = "/Features"
+			if( self.isRoot() ) {
+				return path;
+			}
+			return path+"/"+self.name;
+		}
+		
+		this.addFeature = function(name, loaded) {
+			var view = "view"
+			var viewModel = "viewModel";
+			
+			var path = self.getBasePath();
+			
+			if( !self.isRoot() ) {
+				view = name;
+				viewModel = name;
+			} else {
+				path = path+"/"+name;
+			}
+			
+			var feature = new Feature(name, view, viewModel, path);
+			self[name] = feature;
 			feature.load(loaded);
 		}
-	};
+	}
+
+	Bifrost.features = $.extend(new Container("root"), {
+		addOrGetContainer: function(name) {
+			if( Bifrost.features[name] != undefined ) {
+				return Bifrost.features[name];
+			}
+			var container = new Container(name);
+			Bifrost.features[name] = container;
+			return container;
+		}
+	});
 
 	
 	$(function() {
 		$("*[data-feature]").each(function() {
 			var target = $(this);
 			var feature = $(this).attr("data-feature");
+
+			var container = feature;
+			var name = feature;
+			var root = Bifrost.features;
 			
-			Bifrost.Features.add(feature, function(feature) {
-				feature.renderTo(target[0]);
+			if( feature.indexOf('/') > 0 ) {
+				var elements = feature.split('/');
+				container = elements[0];
+				name = elements[1];
+				root = Bifrost.features.addOrGetContainer(container);
+			}
+			
+			root.addFeature(name, function(f) {
+				f.renderTo(target[0]);
 			});
 		});
 	});
