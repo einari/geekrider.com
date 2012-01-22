@@ -153,6 +153,8 @@
     <Content Include="administration\posts\create.js" />
     <Content Include="administration\posts\create\view.html" />
     <Content Include="administration\posts\create\viewModel.js" />
+    <Content Include="administration\toolbar\view.html" />
+    <Content Include="administration\toolbar\viewModel.js" />
     <Content Include="features\Layout\footer.html" />
     <Content Include="features\Layout\footer.js" />
     <Content Include="features\Layout\header.html" />
