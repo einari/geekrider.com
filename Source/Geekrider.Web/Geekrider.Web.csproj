@@ -211,6 +211,8 @@
     <Content Include="images\ta-mark.png" />
     <Content Include="images\tabs_1.png" />
     <Content Include="images\tabs_2.png" />
+    <Content Include="scripts\Bifrost\bifrost.commands.js" />
+    <Content Include="scripts\domReady.js" />
     <Content Include="scripts\PT_Sans.js" />
     <Content Include="scripts\coin-slider.min.js" />
     <Content Include="scripts\cufon-yui.js" />
