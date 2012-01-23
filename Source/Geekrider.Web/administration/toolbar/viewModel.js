@@ -3,7 +3,7 @@
 		init: function(element, valueAccessor, allBindingAccessor, viewModel) {
 			$(element).hover(
 				function() {
-					$(element).find('ul:first').stop(true,true).slideDown(200).show();
+					$(element).find('ul:first').stop(true,true).slideDown(100).show();
 				},
 				function() {
 					$(element).find('ul:first').stop(true,true).slideUp(0);
