@@ -39,7 +39,7 @@
         <Error Condition="!Exists('$(NuGetExePath)')" Text="Unable to locate '$(NuGetExePath)'" />
     </Target>
     
-    <Target Name="BeforeBuild" DependsOnTargets="CheckPrerequisites">
+    <Target Name="RestorePackages" DependsOnTargets="CheckPrerequisites">
         <Exec Command="$(RestoreCommand)"
               LogStandardErrorAsError="true"
               Condition="Exists('$(PackagesConfig)')" />

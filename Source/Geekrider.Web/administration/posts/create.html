@@ -12,9 +12,18 @@
                 Title
             </td>
             <td>
+                <input data-bind="value: createPostCommand.parameters.title" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Body
+            </td>
+            <td>
+                <input data-bind="value: createPostCommand.parameters.body" />
             </td>
         </tr>
     </table>
-    <img src="/images/commands/ok.png" />
+    <a href="#" data-bind="command: createPostCommand"><img src="/images/commands/ok.png" /></a>
 </body>
 </html>

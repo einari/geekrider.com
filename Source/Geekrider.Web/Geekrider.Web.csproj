@@ -44,9 +44,6 @@
     <Reference Include="Bifrost.MongoDB">
       <HintPath>..\Solutions\packages\Bifrost\Bifrost.MongoDB.dll</HintPath>
     </Reference>
-    <Reference Include="Bifrost.Services">
-      <HintPath>..\Solutions\packages\Bifrost\Bifrost.Services.dll</HintPath>
-    </Reference>
     <Reference Include="Bifrost.Unity">
       <HintPath>..\Solutions\packages\Bifrost\Bifrost.Unity.dll</HintPath>
     </Reference>
@@ -141,8 +138,6 @@
   <ItemGroup>
     <Content Include="administration\posts\create.html" />
     <Content Include="administration\posts\create.js" />
-    <Content Include="administration\posts\create\view.html" />
-    <Content Include="administration\posts\create\viewModel.js" />
     <Content Include="administration\toolbar\view.html" />
     <Content Include="administration\toolbar\viewModel.js" />
     <Content Include="features\Layout\footer.html" />
@@ -201,7 +196,8 @@
     <Content Include="images\ta-mark.png" />
     <Content Include="images\tabs_1.png" />
     <Content Include="images\tabs_2.png" />
-    <Content Include="scripts\Bifrost\bifrost.commands.js" />
+    <Content Include="scripts\Bifrost\Bifrost.commands.js" />
+    <Content Include="scripts\Bifrost\Bifrost.utils.js" />
     <Content Include="scripts\domReady.js" />
     <Content Include="scripts\PT_Sans.js" />
     <Content Include="scripts\coin-slider.min.js" />
@@ -229,7 +225,7 @@
     <Content Include="index.html" />
     <Content Include="features\Posts\view.html" />
     <Content Include="features\Posts\viewModel.js" />
-    <Content Include="scripts\Bifrost\Bifrost.Features.js" />
+    <Content Include="scripts\Bifrost\Bifrost.features.js" />
     <Content Include="scripts\order.js" />
   </ItemGroup>
   <ItemGroup>
@@ -240,7 +236,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="viewModel.js" />
-    <Content Include="web.config" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </Content>
@@ -250,6 +248,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Bifrost\Source\Bifrost.Services\Bifrost.Services.csproj">
+      <Project>{2928688F-2D89-4C2B-AB59-F82B80A14009}</Project>
+      <Name>Bifrost.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Geekrider.Domain\Geekrider.Domain.csproj">
       <Project>{798E1DB4-AC7A-4877-9365-DF7559BACF34}</Project>
       <Name>Geekrider.Domain</Name>

@@ -1,3 +1,14 @@
+function getFilename(url) {
+    if (url) {
+        var m = url.toString().match(/.*\/(.+?)\./);
+        if (m && m.length > 1) {
+            return m[1];
+        }
+    }
+    return "";
+}
+
+
 require.config({
 	appDir: "/",
 	baseUrl: "/scripts",
@@ -13,15 +24,20 @@ require(
 	[
 		"cufon-yui",
 		"PT_Sans",
-		"order!jquery", 
+		"order!jquery",
 		"order!hoverintent",
-		"order!knockout", 
-		"order!Bifrost/Bifrost.Features",
+		"order!knockout",
+        "order!Bifrost/Bifrost.utils",
+		"order!Bifrost/Bifrost.features",
+        "order!Bifrost/Bifrost.commands",
 		"order!custom",
 		"order!coin-slider.min",
 		"order!menusm",
-	], function($) {
-		require(["viewModel.js"], function() {
-			console.log("Application loaded");
-		});
-});
+	], function ($) {
+	    var filename = getFilename(window.location.href);
+	    var viewModelName = filename.toLowerCase() == "view" ? "viewModel.js" : filename + ".js";
+
+	    require([viewModelName], function () {
+	        console.log("Application loaded");
+	    });
+	});

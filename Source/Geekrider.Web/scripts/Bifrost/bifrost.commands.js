@@ -1,13 +1,16 @@
 ﻿var Bifrost = Bifrost || {};
 
-(function () {
-    function S4() {
-       return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
-    }
-    function guid() {
-       return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
-    }
+if (typeof ko === 'undefined') {
+    throw "Requires Knockout.js";
+}
 
+ko.bindingHandlers.command = {
+    init: function (element, valueAccessor, allBindingAccessor, viewModel) {
+        ko.applyBindingsToNode(element, { click: valueAccessor().execute }, viewModel);
+    }
+};
+
+(function () {
     function CommandDescriptor(name, commandParameters) {
         this.Name = name;
 
@@ -15,8 +18,8 @@
             Id: guid()
         };
 
-        for( var parameter in commandParameters ) {
-            if( typeof(commandParameters[parameter]) == "function")  {
+        for (var parameter in commandParameters) {
+            if (typeof (commandParameters[parameter]) == "function") {
                 commandContent[parameter] = commandParameters[parameter]();
             } else {
                 commandContent[parameter] = commandParameters[parameter];
@@ -28,43 +31,43 @@
     };
 
     function Command() {
-        self = this;
-        self.hasError = false;
-        self.isBusy =  ko.observable();
-        self.canExecute = ko.observable(true);
+        var self = this;
+        this.hasError = false;
+        this.isBusy = ko.observable();
+        this.canExecute = ko.observable(true);
 
-        self.execute = function() {
+        this.execute = function () {
             self.hasError = false;
-            if( self.beforeExecute ) {
+            if (self.beforeExecute) {
                 self.beforeExecute(self);
             }
 
-            if( !self.canExecute() ) {
+            if (!self.canExecute()) {
                 return;
             }
             self.isBusy(true);
 
             $.ajax({
-                url: "CommandCoordinator/handle", 
+                url: "/CommandCoordinator/Handle",
                 type: 'POST',
                 dataType: 'json',
-                data: JSON.stringify(new CommandDescriptor(self.name, self.parameters)),
+                data: JSON.stringify({ commandDescriptor : JSON.stringify(new CommandDescriptor(self.name, self.parameters)) }),
                 contentType: 'application/json; charset=utf-8',
-                error: function(e) {
+                error: function (e) {
                     self.hasError = true;
                     self.error = e;
 
-                    if( self.onError != undefined ) {
+                    if (self.onError != undefined) {
                         self.onError(self);
                     }
                 },
-                complete: function() {
-                    if( !self.hasError ) {
-                        if( self.onSuccess != undefined ) {
+                complete: function () {
+                    if (!self.hasError) {
+                        if (self.onSuccess != undefined) {
                             self.onSuccess(self);
                         }
                     }
-                    if( self.onComplete != undefined ) {
+                    if (self.onComplete != undefined) {
                         self.onComplete(self);
                     }
                     self.isBusy(false);
@@ -74,7 +77,7 @@
     };
 
     Bifrost.commands = {
-        create: function(configuration) {
+        create: function (configuration) {
             var cmd = new Command();
             $.extend(cmd, configuration);
             return cmd;

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geekrider.Views", "..\Geekr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geekrider.Concepts", "..\Geekrider.Concepts\Geekrider.Concepts.csproj", "{FAEA7B21-D92F-4FEE-BF8F-EA027C6F12B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bifrost.Services", "..\..\..\Bifrost\Source\Bifrost.Services\Bifrost.Services.csproj", "{2928688F-2D89-4C2B-AB59-F82B80A14009}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{FAEA7B21-D92F-4FEE-BF8F-EA027C6F12B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAEA7B21-D92F-4FEE-BF8F-EA027C6F12B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAEA7B21-D92F-4FEE-BF8F-EA027C6F12B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2928688F-2D89-4C2B-AB59-F82B80A14009}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2928688F-2D89-4C2B-AB59-F82B80A14009}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2928688F-2D89-4C2B-AB59-F82B80A14009}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2928688F-2D89-4C2B-AB59-F82B80A14009}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
