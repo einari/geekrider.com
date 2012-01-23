@@ -16,7 +16,7 @@ namespace Geekrider
         {
             //configure.UsingConfigConfigurationSource();
             var mongoDbUrl = System.Configuration.ConfigurationManager.AppSettings["MONGOHQ_URL"];
-            configure.UsingMongoDb(mongoDbUrl, "Geekrider"); // 07a538a6-f8a8-43eb-b0e1-adb7ef5e5942
+            configure.UsingMongoDb(mongoDbUrl, "07a538a6-f8a8-43eb-b0e1-adb7ef5e5942"); //Geekrider"); // 07a538a6-f8a8-43eb-b0e1-adb7ef5e5942
 
             base.OnConfigure(configure);
         }
