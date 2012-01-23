@@ -240,7 +240,7 @@
     <Compile Include="Services\ViewService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="viewModel.js" />
+    <Content Include="index.js" />
     <Content Include="web.config">
       <SubType>Designer</SubType>
     </Content>
