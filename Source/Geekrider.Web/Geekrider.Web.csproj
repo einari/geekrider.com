@@ -44,6 +44,10 @@
     <Reference Include="Bifrost.MongoDB">
       <HintPath>..\Solutions\packages\Bifrost\Bifrost.MongoDB.dll</HintPath>
     </Reference>
+    <Reference Include="Bifrost.Services, Version=0.6.6.7, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Solutions\packages\Bifrost\Bifrost.Services.dll</HintPath>
+    </Reference>
     <Reference Include="Bifrost.Unity">
       <HintPath>..\Solutions\packages\Bifrost\Bifrost.Unity.dll</HintPath>
     </Reference>
@@ -75,6 +79,7 @@
       <HintPath>..\Solutions\packages\mongocsharpdriver.1.3.1\lib\net35\MongoDB.Driver.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
@@ -248,10 +253,6 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Bifrost\Source\Bifrost.Services\Bifrost.Services.csproj">
-      <Project>{2928688F-2D89-4C2B-AB59-F82B80A14009}</Project>
-      <Name>Bifrost.Services</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Geekrider.Domain\Geekrider.Domain.csproj">
       <Project>{798E1DB4-AC7A-4877-9365-DF7559BACF34}</Project>
       <Name>Geekrider.Domain</Name>
