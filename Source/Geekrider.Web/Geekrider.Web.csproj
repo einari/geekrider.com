@@ -49,8 +49,8 @@
     <Reference Include="Bifrost.Ninject">
       <HintPath>..\Solutions\packages\Bifrost\Bifrost.Ninject.dll</HintPath>
     </Reference>
-    <Reference Include="Bifrost.WCF">
-      <HintPath>..\Solutions\packages\Bifrost\Bifrost.WCF.dll</HintPath>
+    <Reference Include="Bifrost.Services">
+      <HintPath>..\Solutions\packages\Bifrost\Bifrost.Services.dll</HintPath>
     </Reference>
     <Reference Include="Bifrost.Web.Mvc">
       <HintPath>..\Solutions\packages\Bifrost\Bifrost.Web.Mvc.dll</HintPath>

@@ -1,24 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.ServiceModel;
-using System.ServiceModel.Activation;
-using System.ServiceModel.Web;
 using Bifrost.Execution;
 using Bifrost.Serialization;
 using Bifrost.Views;
 
 namespace Geekrider.Services
 {
-    /*
-    [ServiceContract]
-    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
-    */
-    [ServiceContract]
-    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall)]
-
     public class ViewService
     {
         ITypeDiscoverer _typeDiscoverer;
@@ -49,8 +37,6 @@ namespace Geekrider.Services
             }
         }
 
-
-        [WebGet(ResponseFormat=WebMessageFormat.Json)]
         public string GetAll(string viewName)
         {
             if (!_viewTypes.ContainsKey(viewName))
@@ -64,7 +50,6 @@ namespace Geekrider.Services
             
             var serialized = _serializer.ToJson(queryable);
             return serialized;
-
         }
     }
 }
