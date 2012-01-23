@@ -3,10 +3,10 @@ using Bifrost.Configuration;
 using Bifrost.Execution;
 using Bifrost.Services.Commands;
 using Bifrost.Services.Execution;
+using Bifrost.Unity;
 using Bifrost.Web.Mvc;
 using Geekrider.Services;
 using Microsoft.Practices.Unity;
-using Bifrost.Unity;
 
 namespace Geekrider
 {
@@ -14,7 +14,9 @@ namespace Geekrider
     {
         public override void OnConfigure(Configure configure)
         {
-            configure.UsingConfigConfigurationSource();
+            //configure.UsingConfigConfigurationSource();
+            var mongoDbUrl = System.Configuration.ConfigurationSettings.AppSettings["MONGOHQ_URL"];
+            configure.UsingMongoDb(mongoDbUrl, "Geekrider"); // 07a538a6-f8a8-43eb-b0e1-adb7ef5e5942
 
             base.OnConfigure(configure);
         }
