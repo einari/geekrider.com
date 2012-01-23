@@ -5,7 +5,7 @@ namespace Geekrider.Views.Posts
 {
     public class PostEventSubscribers : EventSubscriber<Post>
     {
-        void Process(PostCreated created)
+        public void Process(PostCreated created)
         {
             var post = new Post
             {
