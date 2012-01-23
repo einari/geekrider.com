@@ -35,6 +35,9 @@ require(
 		"order!menusm",
 	], function ($) {
 	    var filename = getFilename(window.location.href);
+	    if (filename == '') {
+	        filename = "index";
+	    }
 	    var viewModelName = filename.toLowerCase() == "view" ? "viewModel.js" : filename + ".js";
 
 	    require([viewModelName], function () {
