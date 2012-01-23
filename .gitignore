@@ -8,3 +8,4 @@ Source/Solutions/packages/**/*
 *.pidb
 *pidb
 Source/Geekrider.Web/Geekrider.Web.pidb
+repositories.config
