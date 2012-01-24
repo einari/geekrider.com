@@ -15,8 +15,12 @@ require.config({
 	optimize: "none",
 
 	paths: {
-		"jquery" : "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min",
-		"knockout" : "knockout-2.0.0"
+	    "jquery": "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min",
+	    "knockout": "http://cdn.dolittle.com/Knockout/knockout-2.0.0",
+	    "bifrost": "http://cdn.dolittle.com/Bifrost/Bifrost.debug",
+	    "order": "http://cdn.dolittle.com/Require/order",
+	    "domReady": "http://cdn.dolittle.com/Require/domReady",
+	    "text": "http://cdn.dolittle.com/Require/text"
 	}
 });
 
@@ -25,11 +29,9 @@ require(
 		"cufon-yui",
 		"PT_Sans",
 		"order!jquery",
-		"order!hoverintent",
 		"order!knockout",
-        "order!Bifrost/Bifrost.utils",
-		"order!Bifrost/Bifrost.features",
-        "order!Bifrost/Bifrost.commands",
+        "order!bifrost",
+		"order!hoverintent",
 		"order!custom",
 		"order!coin-slider.min",
 		"order!menusm",
