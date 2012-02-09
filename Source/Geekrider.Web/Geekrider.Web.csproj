@@ -201,8 +201,7 @@
     <Content Include="images\ta-mark.png" />
     <Content Include="images\tabs_1.png" />
     <Content Include="images\tabs_2.png" />
-    <Content Include="scripts\Bifrost\Bifrost.commands.js" />
-    <Content Include="scripts\Bifrost\Bifrost.utils.js" />
+    <Content Include="scripts\Bifrost.debug.js" />
     <Content Include="scripts\domReady.js" />
     <Content Include="scripts\PT_Sans.js" />
     <Content Include="scripts\coin-slider.min.js" />
@@ -230,7 +229,6 @@
     <Content Include="index.html" />
     <Content Include="features\Posts\view.html" />
     <Content Include="features\Posts\viewModel.js" />
-    <Content Include="scripts\Bifrost\Bifrost.features.js" />
     <Content Include="scripts\order.js" />
   </ItemGroup>
   <ItemGroup>
@@ -266,4 +264,7 @@
       <Name>Geekrider.Views</Name>
     </ProjectReference>
   </ItemGroup>
+  <PropertyGroup>
+    <PreBuildEvent>copy c:\projects\bifrost\source\bifrost.javascript\Bifrost.debug.js $(ProjectDir)Scripts</PreBuildEvent>
+  </PropertyGroup>
 </Project>

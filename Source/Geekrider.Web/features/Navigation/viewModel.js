@@ -1,5 +1,5 @@
 (function() {
-	Bifrost.features.navigation.defineViewModel(function() {
+    Bifrost.features.featureManager.get("navigation").defineViewModel(function () {
 		var self = this;
 		
 		self.navigationItems = [

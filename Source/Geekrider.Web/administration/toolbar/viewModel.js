@@ -12,10 +12,10 @@
 		update: function(element, valueAccessor, allBindingAccessor, viewModel) {
 			
 		}
-	} 
-	
-	
-	Bifrost.features.toolbar.defineViewModel(function() {
+	}
+
+
+    Bifrost.features.featureManager.get("admin/toolbar").defineViewModel(function () {
 		var self = this;
 		
 		this.items = [

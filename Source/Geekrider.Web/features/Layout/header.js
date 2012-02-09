@@ -1,5 +1,4 @@
-(function() {
-	Bifrost.features.layout.header.defineViewModel(function() {
-		
-	});
+(function () {
+    Bifrost.features.featureManager.get("layout/header").defineViewModel(function () {
+    });
 })();

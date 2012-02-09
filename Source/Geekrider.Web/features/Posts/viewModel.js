@@ -1,5 +1,5 @@
-(function() {
-	Bifrost.features.posts.defineViewModel(function() {
+(function () {
+    Bifrost.features.featureManager.get("posts").defineViewModel(function () {
 		
 	});
 })();
