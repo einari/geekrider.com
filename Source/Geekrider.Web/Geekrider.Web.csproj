@@ -265,6 +265,6 @@
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
-    <PreBuildEvent>copy c:\projects\bifrost\source\bifrost.javascript\Bifrost.debug.js $(ProjectDir)Scripts</PreBuildEvent>
+    <PreBuildEvent>rem copy c:\projects\bifrost\source\bifrost.javascript\Bifrost.debug.js $(ProjectDir)Scripts</PreBuildEvent>
   </PropertyGroup>
 </Project>
