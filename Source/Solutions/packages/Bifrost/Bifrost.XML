@@ -2438,6 +2438,23 @@
             </summary>
             <param name="commandResultToMerge">The <see cref="T:Bifrost.Commands.CommandResult"/> to merge with the current instance</param>
         </member>
+        <member name="M:Bifrost.Commands.CommandResult.ForCommand(Bifrost.Commands.ICommand)">
+            <summary>
+            Create a <see cref="T:Bifrost.Commands.CommandResult"/> for a given <see cref="T:Bifrost.Commands.ICommand"/> instance
+            </summary>
+            <param name="command"><see cref="T:Bifrost.Commands.ICommand"/> to create from</param>
+            <returns>A <see cref="T:Bifrost.Commands.CommandResult"/> with <see cref="T:Bifrost.Commands.ICommand"/> details populated</returns>
+        </member>
+        <member name="P:Bifrost.Commands.CommandResult.CommandName">
+            <summary>
+            Gets or sets the name of command that this result is related to
+            </summary>
+        </member>
+        <member name="P:Bifrost.Commands.CommandResult.CommandId">
+            <summary>
+            Gets or sets the Id of the command that this result is related to
+            </summary>
+        </member>
         <member name="P:Bifrost.Commands.CommandResult.ValidationResults">
             <summary>
             Gets or sets the ValidationResults generated during handling of a command
