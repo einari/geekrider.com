@@ -21,28 +21,42 @@
 	<integer>200</integer>
 	<key>metaData</key>
 	<dict>
-		<key>features/Header/view.html</key>
+		<key>Global.asax</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>19</integer>
+				<integer>1</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>index.html</key>
+		<key>administration/toolbar/view.html</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>78</integer>
 				<key>line</key>
-				<integer>7</integer>
+				<integer>17</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>14</integer>
+		</dict>
+		<key>administration/toolbar/viewModel.js</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>60</integer>
+				<key>line</key>
+				<integer>5</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -54,55 +68,72 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>44</integer>
+				<integer>4</integer>
 				<key>line</key>
-				<integer>32</integer>
+				<integer>72</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>13</integer>
+			<integer>59</integer>
 		</dict>
 		<key>scripts/main.js</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>17</integer>
+				<integer>63</integer>
 				<key>line</key>
-				<integer>17</integer>
+				<integer>18</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>styles/style.css</key>
+		<key>scripts/menusm.js</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>17</integer>
+				<integer>8</integer>
 				<key>line</key>
-				<integer>9</integer>
+				<integer>27</integer>
 			</dict>
+			<key>columnSelection</key>
+			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>60</integer>
+				<key>line</key>
+				<integer>27</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>8</integer>
+				<key>line</key>
+				<integer>27</integer>
+			</dict>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>index.html</string>
-		<string>styles/style.css</string>
-		<string>scripts/main.js</string>
 		<string>scripts/Bifrost/Bifrost.Features.js</string>
-		<string>features/Header/view.html</string>
+		<string>administration/toolbar/view.html</string>
+		<string>administration/toolbar/viewModel.js</string>
+		<string>scripts/main.js</string>
+		<string>Global.asax</string>
+		<string>scripts/menusm.js</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
-	<true/>
+	<false/>
 	<key>windowFrame</key>
-	<string>{{0, 4}, {1229, 874}}</string>
+	<string>{{0, 4}, {1440, 874}}</string>
 </dict>
 </plist>
