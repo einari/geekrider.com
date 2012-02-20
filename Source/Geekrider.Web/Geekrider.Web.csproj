@@ -237,6 +237,7 @@
     <Content Include="features\Posts\viewModel.js" />
     <Content Include="scripts\order.js" />
     <Content Include="scripts\jquery.history.js" />
+    <Content Include="scripts\knockout.mapping-2.0.0.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
