@@ -2,10 +2,9 @@
     Bifrost.features.featureManager.get("navigation").defineViewModel(function () {
 		var self = this;
 		
-		self.navigationItems = [
-			{ title: "Home" },
-			{ title: "About" },
-			{ title: "Contact" }
-		];
+		self.navigationItems = ko.mapping.fromJS([
+			{ title: "Home", feature: "home" },
+			{ title: "New Post", feature: "admin/posts/create" },
+		]);
 	});
 })();	

@@ -20,10 +20,10 @@
 
 	<div class="topnav">
 		<ul data-bind="foreach: navigationItems">
-			<li class="page_item"><a href="#" data-bind="title: title, text: title"></a></li>
+			<li class="page_item page-item-1">
+				<a data-bind="text: title, navigateTo: feature, attr: { title: title }" href="#"></a>
+			</li> 
 		</ul>
 	</div>
-
-
 </body>
 </html>

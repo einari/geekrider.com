@@ -1,31 +1,20 @@
 ﻿(function (undefined) {
-    function viewModel() {
+	Bifrost.features.featureManager.get("admin/posts/create").defineViewModel(function () {
         var self = this;
 
-        this.createPostCommand = Bifrost.commands.create({
+        this.createPostCommand = Bifrost.commands.Command.create({
             name: 'CreatePost',
             context: self,
-            onSuccess: function (command) {
-                command.context.message("We got it");
+            success: function (command) {
+                console.log("Done");
             },
-
             beforeExecute: function (command) {
             },
             parameters: {
-                postId : guid(),
+                postId : Bifrost.Guid.create(),
                 title: ko.observable(),
                 body: ko.observable()
             }
         });
-    }
-
-
-
-    if (Bifrost.features.posts != undefined) {
-        Bifrost.features.posts.create.defineViewModel(viewModel);
-    } else {
-        $(function () {
-            ko.applyBindings(new viewModel());
-        });
-    }
+    });
 })();
