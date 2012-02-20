@@ -5,6 +5,7 @@ require.config({
 
 	paths: {
 	    "jquery": "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min",
+		"jquery.validate": "jquery.validate.min",
 	    "knockout": "http://cdn.dolittle.com/Knockout/knockout-2.0.0",
 		"knockout.mapping": "knockout.mapping-2.0.0",
 	    "bifrost": "Bifrost.debug",
@@ -18,29 +19,33 @@ require.config({
 
 require(
     ["jquery", "knockout"],
-    function () {
-        require(["knockout.mapping", "jquery.history", "bifrost"],
-            function () {
-                Bifrost.features.uriMapper.add("admin/{feature}/{subFeature}", "/administration/{feature}/{subFeature}", false);
-                Bifrost.features.uriMapper.add("admin/{feature}", "/administration/{feature}", true);
+	function() {
+		require(["jquery.history", "jquery.validate"],
+		    function () {
+		        require(["knockout.mapping", "bifrost"],
+		            function () {
+		                Bifrost.features.uriMapper.add("admin/{feature}/{subFeature}", "/administration/{feature}/{subFeature}", false);
+		                Bifrost.features.uriMapper.add("admin/{feature}", "/administration/{feature}", true);
 
-                Bifrost.features.uriMapper.add("{feature}/{subFeature}", "/Features/{feature}/{subFeature}", false);
-                Bifrost.features.uriMapper.add("{feature}", "/Features/{feature}", true);
+		                Bifrost.features.uriMapper.add("{feature}/{subFeature}", "/Features/{feature}/{subFeature}", false);
+		                Bifrost.features.uriMapper.add("{feature}", "/Features/{feature}", true);
 
-                require([                
-                        "cufon-yui",
-		                "PT_Sans",
-		                "order!hoverintent",
-		                "order!custom",
-		                "order!coin-slider.min",
-		                "order!menusm"],
-                        function() {
-                            console.log("Loaded");
-                        }
-                );
-            }
-        );
-    }
+		                require([                
+		                        "cufon-yui",
+				                "PT_Sans",
+				                "order!hoverintent",
+				                "order!custom",
+				                "order!coin-slider.min",
+				                "order!menusm"],
+		                        function() {
+		                            console.log("Loaded");
+		                        }
+		                );
+		            }
+		        );
+		    }
+		);
+	}
 );
 
 /*
