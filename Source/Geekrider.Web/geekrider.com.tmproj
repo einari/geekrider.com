@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>scripts/main.js</string>
+	<string>features/navigation/viewModel.js</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -63,33 +63,93 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>scripts/Bifrost/Bifrost.Features.js</key>
+		<key>features/home/view.html</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>4</integer>
+				<integer>33</integer>
 				<key>line</key>
-				<integer>72</integer>
+				<integer>12</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>59</integer>
+			<integer>0</integer>
 		</dict>
-		<key>scripts/main.js</key>
+		<key>features/navigation/view.html</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>63</integer>
+				<integer>28</integer>
 				<key>line</key>
-				<integer>18</integer>
+				<integer>14</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
+		</dict>
+		<key>features/navigation/viewModel.js</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>columnSelection</key>
+			<false/>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>6</integer>
+				<key>line</key>
+				<integer>9</integer>
+			</dict>
+		</dict>
+		<key>index.html</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>30</integer>
+			</dict>
+			<key>columnSelection</key>
+			<false/>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>29</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>30</integer>
+			</dict>
 		</dict>
 		<key>scripts/menusm.js</key>
 		<dict>
@@ -124,12 +184,10 @@
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>scripts/Bifrost/Bifrost.Features.js</string>
-		<string>administration/toolbar/view.html</string>
-		<string>administration/toolbar/viewModel.js</string>
-		<string>scripts/main.js</string>
-		<string>Global.asax</string>
-		<string>scripts/menusm.js</string>
+		<string>features/navigation/view.html</string>
+		<string>features/navigation/viewModel.js</string>
+		<string>index.html</string>
+		<string>features/home/view.html</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>
