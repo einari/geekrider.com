@@ -1,0 +1,1 @@
+juicer merge ~/Projects/Bifrost/Source/Bifrost.JavaScript/Bifrost.js -o scripts/Bifrost.debug.js -s --force -m none

@@ -1,21 +1,3 @@
-var Bifrost = Bifrost || {};
-(function(global, undefined) {
-    Bifrost.namespace = function (ns) {
-        var parent = global;
-        var parts = ns.split('.');
-        $.each(parts, function (index, part) {
-            if (!Object.prototype.hasOwnProperty.call(parent, part)) {
-                parent[part] = {};
-            }
-            parent = parent[part];
-        });
-    };
-})(window);
-Bifrost.namespace("Bifrost");
-Bifrost.extend = function extend(destination, source) {
-    return $.extend(destination, source);
-};
-
 Bifrost.namespace("Bifrost");
 
 Bifrost.DefinitionMustBeFunction = function(message) {
@@ -91,6 +73,24 @@ Bifrost.namespace("Bifrost");
 Bifrost.Exception.define("Bifrost.LocationNotSpecified","Location was not specified");
 Bifrost.Exception.define("Bifrost.InvalidUriFormat", "Uri format specified is not valid");
 
+var Bifrost = Bifrost || {};
+(function(global, undefined) {
+    Bifrost.namespace = function (ns) {
+        var parent = global;
+        var parts = ns.split('.');
+        $.each(parts, function (index, part) {
+            if (!Object.prototype.hasOwnProperty.call(parent, part)) {
+                parent[part] = {};
+            }
+            parent = parent[part];
+        });
+    };
+})(window);
+Bifrost.namespace("Bifrost");
+Bifrost.extend = function extend(destination, source) {
+    return $.extend(destination, source);
+};
+
 Bifrost.namespace("Bifrost");
 Bifrost.Guid = (function () {
     function S4() {
@@ -132,6 +132,33 @@ Bifrost.hashString = (function() {
 		}
 	}
 })();
+
+Bifrost.namespace("Bifrost")
+Bifrost.TypeInfo = (function() {
+	function TypeInfo(obj) {
+		var target = obj;
+
+		this.initializeName = function() {
+	   		var funcNameRegex = /function (.{1,})\(/;
+	   		var results = (funcNameRegex).exec((target).constructor.toString());
+	   		this.name = (results && results.length > 1) ? results[1] : "";
+		}
+		
+		this.initializeName();
+	}
+
+	return {
+		getFor: function(obj) {
+			var typeInfo = new TypeInfo(obj);
+			return typeInfo;
+		}
+	};
+})();
+
+// Object extensions
+Object.prototype.getTypeInfo = function() { 
+	return Bifrost.TypeInfo.getFor(this);
+};
 
 Bifrost.namespace("Bifrost");
 Bifrost.Uri = (function(window, undefined) {
@@ -1037,15 +1064,17 @@ Bifrost.features.ViewModel = (function(window, undefined) {
 			this.uriChangedSubscribers.push(callback);
 		}
 		
-		this.onUriChanged = function(uri) {
+		this.onUriChanged = function() {
 			$.each(self.uriChangedSubscribers, function(index, callback) {
-				callback(uri);
+				callback();
 			});
 		}
 
 		if(typeof History !== "undefined" && typeof History.Adapter !== "undefined") {
 			History.Adapter.bind(window,"statechange", function() {
 				var state = History.getState();
+				
+				self.onUriChanged();
 				
 				self.uri.setLocation(state.url);
 				
@@ -1060,8 +1089,6 @@ Bifrost.features.ViewModel = (function(window, undefined) {
 						}
 					}
 				}
-				
-				self.onUriChanged(self.uri);
 			});
 		}
 	}
@@ -1142,7 +1169,7 @@ Bifrost.features.Feature = (function () {
         }
 
         this.defineViewModel = function (viewModel, options) {
-            self.viewModelDefinition = Bifrost.features.ViewModelDefinition.define(viewModel, options);
+            self.viewModel = Bifrost.features.ViewModelDefinition.define(viewModel, options);
         }
 
         this.renderTo = function (target) {
@@ -1215,31 +1242,46 @@ if (typeof ko !== 'undefined') {
             ko.applyBindingsToNode(element, { 
 				click: function() {
 					var featureName = valueAccessor()();
-					History.pushState({feature:featureName},$(element).attr("title"),"/"+featureName);
+					History.pushState({feature:featureName},$(element).attr("title"),"?feature="+featureName);
 				} 
 			}, viewModel);
         }
     };
 }
 
-if (typeof ko !== 'undefined') {
-    ko.bindingHandlers.feature = {
-        init: function (element, valueAccessor, allBindingAccessor, viewModel) {
-        },
-        update: function (element, valueAccessor, allBindingAccessor, viewModel) {
-			var featureName = valueAccessor()();
-			var feature = Bifrost.features.featureManager.get(featureName);
-			
-			$(element).empty();
-			
-			var container = $("<div/>");
-			$(element).append(container);
-			
-			feature.renderTo(container[0]);
-        }
-    };
-}
+(function() {
+	if(typeof History === "undefined" || typeof History.Adapter === "undefined") return;
+	
+	var container = $("[data-navigation-container]")[0];
 
+	History.Adapter.bind(window,"statechange", function() {
+		var state = History.getState();
+		var featureName = state.data.feature;
+
+		$(container).html("");
+		var feature = Bifrost.features.featureManager.get(featureName);
+		feature.renderTo(container);
+	});
+
+	$(function () {
+		var state = History.getState();
+		var hash = Bifrost.hashString.decode(state.hash);
+		var featureName = hash.feature;
+		if( typeof featureName !== "undefined") {
+			$(window).trigger("statechange");
+		} else {
+			var optionString = $(container).data("navigation-container");
+			var optionsDictionary = ko.jsonExpressionRewriting.parseObjectLiteral(optionString);
+			$.each(optionsDictionary, function(index, item) {
+				if( item.key === "default") {
+					var feature = Bifrost.features.featureManager.get(item.value);
+					feature.renderTo(container);
+					return;
+				}
+			});
+		}
+	});
+})();
 Bifrost.namespace("Bifrost.messaging");
 Bifrost.messaging.messenger = (function() {
 	var subscribers = [];
@@ -1269,13 +1311,14 @@ Bifrost.messaging.messenger = (function() {
 	}
 })();
 /*
-@depends utils/namespace.js
-@depends utils/extend.js
 @depends utils/Exception.js
 @depends utils/exceptions.js
+@depends utils/namespace.js
+@depends utils/extend.js
 @depends utils/guid.js
 @depends utils/isNumber.js
 @depends utils/hashString.js
+@depends utils/TypeInfo.js
 @depends utils/Uri.js
 @depends validation/exceptions.js
 @depends validation/ruleHandlers.js
@@ -1307,12 +1350,7 @@ Bifrost.messaging.messenger = (function() {
 @depends features/Feature.js
 @depends features/featureManager.js
 @depends features/loader.js
-@depends features/navigateTo.js
-@depends features/featureBindingHandler.js
+@depends navigation/navigateTo.js
+@depends navigation/navigation.js
 @depends messaging/messenger.js
 */
-
-// Something funky stuff with jQuery makes the TypeInfo break everything
-// depends utils/TypeInfo.js
-// depends navigation/navigation.js
-
