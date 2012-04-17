@@ -1154,7 +1154,6 @@ Bifrost.features.Feature = (function () {
         }
 
         this.actualRenderTo = function (target) {
-			$(target).empty();
             $(target).append(self.view);
             Bifrost.features.featureManager.hookup(function (a) { return $(a, $(target)); });
             var viewModel = self.viewModelDefinition.getInstance();
