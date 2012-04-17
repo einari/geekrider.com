@@ -9,3 +9,8 @@ Source/Solutions/packages/**/*
 *pidb
 Source/Geekrider.Web/Geekrider.Web.pidb
 repositories.config
+Source/Geekrider.Web/bifrost.sh
+
+Source/Geekrider.Web/features/Posts/viewModel.js
+
+Source/Geekrider.Web/geekrider.com.tmproj
