@@ -233,11 +233,11 @@
     <Content Include="html.html" />
     <Content Include="index.html" />
     <Content Include="features\Posts\view.html" />
-    <Content Include="features\Posts\viewModel.js" />
     <Content Include="scripts\order.js" />
     <Content Include="scripts\jquery.history.js" />
     <Content Include="scripts\knockout.mapping-2.0.0.js" />
     <Content Include="features\Navigation\viewModel.js" />
+    <Content Include="features\posts\viewModel.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -275,4 +275,7 @@
   <PropertyGroup>
     <PreBuildEvent>rem copy c:\projects\bifrost\source\bifrost.javascript\Bifrost.debug.js $(ProjectDir)Scripts</PreBuildEvent>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="features\Posts\posts\" />
+  </ItemGroup>
 </Project>
